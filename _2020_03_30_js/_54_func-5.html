@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리턴값으로 함수를 리턴하기</title>
+    <script>
+        function createHello(){
+            function hello(user){
+                document.write(user+"님 방문을 환영합니다");
+            }
+            return hello;
+        }
+        // var func = creatHello();
+        // func("홍길동");
+        createHello()("홍길동");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

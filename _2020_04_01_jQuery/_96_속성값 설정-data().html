@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            margin:0 30px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        // 이미지 클릭시 이미지 교체
+        $(document).ready(function(){
+            // 타겟 목록 구하기
+            var $targetList = $(".target");
+
+            $targetList.click(function(){
+                var $target = $(this);
+
+                // data-sw 값 얻어오기
+                var sw = $target.data("sw");
+
+                if(sw)
+                    $target.attr("src", "../images2/ch1.png");
+                else
+                    $target.attr("src", "../images2/ch2.png");
+
+                $target.data("sw", !sw);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="panel1">
+        <p>테스트1</p>
+        <img src="../images2/ch2.png" class="target" 
+            data-sw="true">
+    </div>
+    <div class="panel2">
+        <p>테스트2</p>
+        <img src="../images2/ch2.png" class="target" 
+            data-sw="true">
+    </div>
+    <div class="panel3">
+        <p>테스트3</p>
+        <img src="../images2/ch2.png" class="target" 
+            data-sw="true">
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 요소에 접근하기</title>    
+    <style>
+        #backColor{
+            background-color:orange;
+            width:1024px;
+            height:768px;
+            border:3px solid blue;
+            margin:0 auto;
+        }
+        button{
+            margin: 20px;
+        }
+    </style>
+    <script>
+        function changeBg(){
+            back = document.getElementById("backColor");
+            back.style.backgroundColor = "yellowgreen";
+            title = document.getElementById("title");
+            title.style.color = "blue";
+        }
+    </script>
+
+
+</head>
+<body>
+    <h1 id="title">This is a heading</h1>
+    <div id="backColor">
+        <button type="button" onclick="changeBg();">클릭하세요</button>
+    </div>    
+</body>
+</html>

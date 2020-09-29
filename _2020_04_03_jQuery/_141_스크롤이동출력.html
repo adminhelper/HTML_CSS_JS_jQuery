@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        #main{
+            border:1px dotted #f00;
+            width:500px;
+            margin:50px;
+        }
+        #info{
+            border:10px solid #f00;
+            position:fixed;
+            left:120px;
+            top:100px;
+        }
+        #gotoTop{
+            width:100px;
+            height:50px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            init();
+
+            $(window).on("scroll", function(){
+                var strInfo = "";
+                strInfo += "window.pageXOffset=" + window.pageXOffset+"<br>";
+                strInfo += "window.pageYOffset=" + window.pageYOffset+"<br>";
+
+                $("#info").html(strInfo);
+            });
+
+            $("#gotoTop").click(function(){
+                window.scrollTo(0, 0);
+            });
+        });
+
+        function init(){
+            for(var i=1000;i>0;i--){
+                $("#main").prepend(pad(i, 4) + "<br>");
+            }
+        }
+
+        function pad(n, width){
+            n = n + '';
+            if(n.length >= width)
+                return n;
+            else
+                return new Array(width - n.length + 1).join('0') + n;
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <button id="gotoTop">top으로 이동</button>
+    </div>
+    <div id="info">
+        스크롤 정보 출력
+    </div>
+</body>
+</html>
